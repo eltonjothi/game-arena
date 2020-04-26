@@ -4,7 +4,8 @@ import AutoSizer from 'react-virtualized-auto-sizer';
 import GamesList from './GamesList';
 import Header from './Header';
 
-const API = 'http://starlord.hackerearth.com/gamesext';
+// const API = 'http://starlord.hackerearth.com/gamesext';
+const API = '/api/gamesext.json';
 
 function SapientGames(props) {
   const virtualizeRef = useRef();
@@ -40,18 +41,18 @@ function SapientGames(props) {
   };
 
   const handleSearch = event => {
-    virtualizeRef.current.scrollTo(0, 0);
+    virtualizeRef && virtualizeRef.current.scrollTo(0, 0);
     setList(filterByValue(allList, event.target.value));
   };
   const handleSortScore = event => {
-    virtualizeRef.current.scrollTo(0, 0);
+    virtualizeRef && virtualizeRef.current.scrollTo(0, 0);
     const sortAsc = (a, b) => parseInt(a.score, 10) - parseInt(b.score, 10);
     const sortDesc = (a, b) => parseInt(b.score, 10) - parseInt(a.score, 10);
     setScoreOrder(scoreOrder === 'asc' ? 'desc' : 'asc');
     setList(allList.sort(scoreOrder === 'asc' ? sortDesc : sortAsc));
   };
   const handleSortReleaseDate = event => {
-    virtualizeRef.current.scrollTo(0, 0);
+    virtualizeRef && virtualizeRef.current.scrollTo(0, 0);
     const sortAsc = (a, b) =>
       parseInt(a.release_year, 10) - parseInt(b.release_year, 10);
     const sortDesc = (a, b) =>
