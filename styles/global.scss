@@ -1,0 +1,111 @@
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';
+@import '../node_modules/bootstrap/scss/reboot';
+@import '../node_modules/bootstrap/scss/grid';
+@import '../node_modules/bootstrap/scss/navbar';
+@import '../node_modules/bootstrap/scss/utilities';
+@import '../node_modules/bootstrap/scss/badge';
+@import '../node_modules/bootstrap/scss/spinners';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap');
+
+html {
+  height: 100%;
+}
+#__next {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  height: 100%;
+}
+.header{
+  h1 {
+    margin: 0px;
+    @include media-breakpoint-down(sm) {
+      font-size: 24px;
+    }
+  }
+  h2 {
+    font-weight: 300;
+    margin: 0px;
+  }
+}
+.virtualize {
+  height: calc(100vh - 150px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  @include media-breakpoint-down(sm) {
+    height: calc(100vh - 135px);
+  }
+}
+.fixed-item-height {
+  height: 20px;
+}
+
+.form-control {
+  font-size: 24px;
+  padding: 5px 15px;
+  width: 100%;
+  color: #7d7c83;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.btn-primary {
+  font-weight: 300;
+  border-radius: 5px;
+  color: #000;
+  background-color: #fff;
+  border-color: #7d7c83;
+  margin-right: 5px;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+  color: #000;
+  background-color: #fff !important;
+  border-color: #7d7c83 !important;
+}
+.list-group {
+  padding: 0;
+}
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  &-title {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+  &-platform {
+    font-weight: 500;
+    color: #7d7c83;
+  }
+  &-desc {
+    margin: 0;
+  }
+  p {
+    color: #7d7c83;
+  }
+}
+.badge-sapient {
+  background-color: #ddd;
+  color: #000;
+  float: right;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 500;
+}
